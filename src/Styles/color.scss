@@ -1,0 +1,22 @@
+$gold: #D4AF37;
+$red: #FF0000;
+
+.text-gold {
+  color: #c3a343;
+}
+.text-red {
+  color: $red;
+}
+
+.text-black {
+  color: black;
+}
+.black {
+  background-color: black !important;
+}
+.white {
+  background-color: white !important;
+}
+.filter-greyscale {
+  filter: grayscale(0.4);
+}

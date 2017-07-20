@@ -41,6 +41,8 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.2.1",
     "react": "^15.5.3",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",

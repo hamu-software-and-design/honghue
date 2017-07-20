@@ -1,1 +1,9 @@
-
+#mainnav {
+  #mainnav-right {
+    @media screen and (min-width: 576px) {
+      .nav-item {
+        padding: 8px 14px;
+      }
+    }
+  }
+}

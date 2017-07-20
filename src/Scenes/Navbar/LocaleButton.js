@@ -9,9 +9,10 @@ import {connect} from 'react-redux'
 import {changeLocale} from '../../Services/Store/Actions/Locale.js'
 
 type PropTypes = {
-  className: string,
+  className?: string,
   to: string,
-  onClick: (string) => void
+  onClick: (string) => void,
+  children?: React.Children
 }
 
 type DefaultProps = {

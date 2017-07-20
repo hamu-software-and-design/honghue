@@ -24,3 +24,24 @@ export function getClientLang(): string {
   const localeWithoutRegionCode = locale.toLowerCase().split(/[_-]+/)[0]
   return localeWithoutRegionCode || 'en'
 }
+
+/**
+ * Flattens a object's properties to a tree of depth 1
+ * @param {object} object
+ */
+export function flattenObject(obj: {}) {
+  if(typeof obj !== 'object' || Array.isArray(obj)) {
+    throw new Error('Param must be an object.')
+  }
+  return Object.keys(obj).reduce((acc, prop) => {
+    if(typeof obj[prop] !== 'object') {
+      acc[prop] = obj[prop]
+      return acc
+    }
+    const flattened = flattenObject(obj[prop])
+    Object.keys(flattened).forEach((flattened_prop) => {
+      acc[prop + '.' + flattened_prop] = flattened[flattened_prop]
+    })
+    return acc
+  }, {})
+}

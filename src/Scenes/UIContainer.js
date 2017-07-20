@@ -1,8 +1,9 @@
 import React from 'react'
 import MainNav from './Navbar/Index.js'
+import Home from './Home/Index.js'
+import Footer from './Footer/Index.js'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../Styles/index.scss'
-
 /**
  * @class
  * @extends {React.Component}
@@ -18,11 +19,8 @@ export default class UIContainer extends React.Component {
     return (
       <div>
         <MainNav />
-        <div className="container">
-          <div id="mainbanner" className="justify-content-center row h-vh-80">
-            <object id="logo" type="image/svg+xml" data="./img/honghue-logo.svg"></object>
-          </div>
-        </div>
+        <Home />
+        <Footer />
       </div>
     )
   }

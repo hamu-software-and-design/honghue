@@ -1,15 +1,29 @@
 /* @flow */
 import React from 'react'
-import {IntlProvider} from 'react-intl'
+import {IntlProvider, addLocaleData} from 'react-intl'
 import { withRouter, Redirect } from 'react-router'
 import {connect} from 'react-redux'
+import en from 'react-intl/locale-data/en'
+import vi from 'react-intl/locale-data/vi'
+import enData from './data/en.json'
+import viData from './data/vi.json'
 import * as RouterTypes from '../Router/flowtypes.js'
 import * as StoreTypes from '../Store/flowtypes.js'
-import {parseQuery} from '../util.js'
+import {parseQuery, flattenObject} from '../util.js'
+
+addLocaleData([...en, ...vi])
 
 type PropTypes = {
   locale: string,
-  location: RouterTypes.LocationType
+  location: RouterTypes.LocationType,
+  children?: React.Children
+}
+
+type State = {
+  localeData: {
+    en: {},
+    vi: {}
+  }
 }
 
 /**
@@ -17,7 +31,13 @@ type PropTypes = {
  * @extends {React.Component}
  * Locale provider for the app.
  */
-class LocaleProvider extends React.Component<void,PropTypes,void> {
+class LocaleProvider extends React.Component<void,PropTypes,State> {
+  state = {
+    localeData: {
+      en: flattenObject(enData),
+      vi: flattenObject(viData)
+    }
+  }
   /**
    * Renders react elements.
    * @method
@@ -32,7 +52,7 @@ class LocaleProvider extends React.Component<void,PropTypes,void> {
       return <Redirect to={location.pathname + '?lang=' + locale} />
     }
     return (
-      <IntlProvider locale={locale}>
+      <IntlProvider locale={locale} messages={this.state.localeData[locale]}>
         {this.props.children}
       </IntlProvider>
     )

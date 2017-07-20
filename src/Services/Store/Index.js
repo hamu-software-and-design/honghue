@@ -11,7 +11,8 @@ import * as StoreTypes from './flowtypes.js'
 import localeReducer from './Reducers/Locale.js'
 
 type PropTypes = {
-  history: RouterTypes.HistoryType
+  history: RouterTypes.HistoryType,
+  children?: React.Children
 }
 
 /**
