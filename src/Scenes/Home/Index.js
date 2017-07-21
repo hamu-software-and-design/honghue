@@ -7,7 +7,7 @@
 import React from 'react'
 import {Carousel} from 'reactstrap'
 import Snippet from './Snippet.js'
-import Gallery from './Gallery.js'
+import Gallery from '../Gallery/Index.js'
 
 /**
  * @class
@@ -33,21 +33,21 @@ export default class HomePage extends React.Component {
             </div>
           </div>
         </div>
-        <div id="banner-2-container" className="card black h-vh-100">
+        <div id="banner-2-container" className="card black">
           <div className="card-block text-white d-flex align-items-center">
             <div className="container">
               <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12 align-items-center d-flex m-v-30px">
                   <blockquote>
                     <h1 className="cursive font-size-xlg">Beauty never goes out of fashion.</h1>
                     <h2 className="cursive">Cosmetics created and produced by Le Dieu Han.</h2>
+                    <h2 className="cursive text-muted">#honghue</h2>
                   </blockquote>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                   <Gallery />
                 </div>
               </div>
-
             </div>
           </div>
         </div>

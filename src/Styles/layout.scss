@@ -1,6 +1,8 @@
 .z-10 {
   z-index: 10;
 }
+
+// heights
 .h-80px {
   height: 80px;
 }
@@ -10,7 +12,6 @@
 .w-150px {
   width: 150px;
 }
-
 .h-vh-80 {
   height: 80vh;
 }
@@ -32,6 +33,18 @@
 .h-min-100 {
   min-height: 100px;
 }
+
+// margins
+.m-v-15px {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.m-v-30px {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+// paddings
 .p-20px {
   padding: 20px;
 }

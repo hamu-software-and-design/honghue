@@ -1,6 +1,9 @@
 .gallery {
   .square-responsive {
-    padding-top: 100%;
+    padding-top: 100% !important;
     display: block;
   }
+}
+.modal-img {
+  width: 100%;
 }
