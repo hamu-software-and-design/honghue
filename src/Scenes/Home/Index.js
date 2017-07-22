@@ -6,8 +6,10 @@
  */
 import React from 'react'
 import {Carousel} from 'reactstrap'
+import {FormattedMessage} from 'react-intl'
 import Snippet from './Snippet.js'
 import Gallery from '../Gallery/Index.js'
+import ModalApp from '../ModalApp/Index.js'
 
 /**
  * @class
@@ -22,6 +24,7 @@ export default class HomePage extends React.Component {
    * @return {ReactElement}
    */
   render() {
+    const galleryitems = ['/img/gallery/1.jpg', '/img/gallery/2.jpg', '/img/gallery/3.jpg', '/img/gallery/4.jpg', '/img/gallery/5.jpg', '/img/gallery/6.jpg']
     return (
       <div>
         <div className="container">
@@ -39,13 +42,28 @@ export default class HomePage extends React.Component {
               <div className="row">
                 <div className="col-md-6 col-sm-12 align-items-center d-flex m-v-30px">
                   <blockquote>
-                    <h1 className="cursive font-size-xlg">Beauty never goes out of fashion.</h1>
-                    <h2 className="cursive">Cosmetics created and produced by Le Dieu Han.</h2>
-                    <h2 className="cursive text-muted">#honghue</h2>
+                    <h1 className="font-quicksand"><FormattedMessage id="motto" /></h1>
+                    <h2 className="font-quicksand"><FormattedMessage id="sub_motto" /></h2>
+                    <h2 className="font-quicksand text-muted"><FormattedMessage id="hashtag" /></h2>
                   </blockquote>
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <Gallery />
+                  <Gallery>
+                    {
+                      galleryitems.map((item, i) => {
+                        return (
+                          <Gallery.Item className="col-4 col-md-6 col-lg-4" img={item} key={"home-gallery-"+i}>
+                            <ModalApp className="card square-responsive relative">
+                              <ModalApp.Trigger style={{ backgroundImage: 'url("'+item+'")'}} className="bg-cover-default hvr-darken absolute-top w-100 h-100"></ModalApp.Trigger>
+                              <ModalApp.Body>
+                                <img className="w-100" src={item} />
+                              </ModalApp.Body>
+                            </ModalApp>
+                          </Gallery.Item>
+                        )
+                      })
+                    }
+                  </Gallery>
                 </div>
               </div>
             </div>
@@ -55,36 +73,3 @@ export default class HomePage extends React.Component {
     )
   }
 }
-
-/**
-<div id="home-2" className="carousel slide w-100" data-ride="carousel">
-  <ol className="carousel-indicators">
-    <li data-target="#home-2" data-slide-to="0" className="active grey"></li>
-    <li data-target="#home-2" data-slide-to="1" className="grey"></li>
-  </ol>
-  <div className="carousel-inner w-100" role="list-box">
-    <div className="carousel-item active w-100 justify-content-center">
-      <div className="row w-100 h-vh-40">
-        <div id="item-1" className="col-6"></div>
-        <div className="d-flex col-6 align-items-center align-items-center">
-          <h1 className="cursive font-weight-bold text-red">Openning 5/6/17</h1>
-        </div>
-      </div>
-    </div>
-    <div className="carousel-item w-100 justify-content-center">
-      <div className="row w-100 h-vh-40">
-        <div className="col-6"></div>
-        <div className="col-6"></div>
-      </div>
-    </div>
-  </div>
-  <a className="carousel-control-prev" role="button" data-slide="prev" href="#home-2">
-    <i className="material-icons text-black" aria-hidden="true">keyboard_arrow_left</i>
-    <span className="sr-only">Previous</span>
-  </a>
-  <a className="carousel-control-next" role="button" data-slide="next" href="#home-2">
-    <i className="material-icons text-black" aria-hidden="true">keyboard_arrow_right</i>
-    <span className="sr-only">Next</span>
-  </a>
-</div>
-*/

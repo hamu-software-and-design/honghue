@@ -1,15 +1,13 @@
-$gold: #D4AF37;
-$red: #FF0000;
-
-.text-gold {
-  color: #c3a343;
-}
-.text-red {
-  color: $red;
-}
+$light-grey: #FAFAFA;
 
 .text-black {
   color: black;
+}
+.stroke-black {
+  stroke: black;
+}
+.light-grey {
+  background-color: $light-grey !important;
 }
 .black {
   background-color: black !important;

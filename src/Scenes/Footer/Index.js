@@ -5,6 +5,7 @@
  * @flow
  */
 import React from 'react'
+import {Button} from 'reactstrap'
 
 /**
  * @class
@@ -20,9 +21,33 @@ export default class Footer extends React.Component {
    */
   render() {
     return (
-      <div id="footer">
+      <div className="">
         <div className="container">
-          <h6 className="text-center text-muted">2017 Design by Hamu Software & Design. All rights reserved.</h6>
+          <div className="row m-v-30px">
+            <div className="col-6">
+              <h5 className="font-quicksand">Hong Hue</h5>
+              <h6>Cosmetics Store</h6>
+              <div>
+                <Button color="secondary"><i className="fa fa-facebook"></i></Button>
+                <Button color="secondary"><i className="fa fa-twitter"></i></Button>
+              </div>
+            </div>
+            <div className="col-6">
+              <i className="material-icons align-middle">phone</i>
+              <h6 className="font-quicksand">
+                312 456 2312
+              </h6>
+              <i className="material-icons align-middle">email</i>
+              <h6 className="font-quicksand">
+                honghue@gmail.com
+              </h6>
+              <i className="material-icons align-middle">location_on</i>
+              <h6 className="font-quicksand m-0">
+                Khu Đô Thị Vĩnh Điềm Trung 79A1, Nha Trang
+              </h6>
+            </div>
+          </div>
+          <h6 className="text-center font-quicksand text-muted p-v-30px">2017 Design by Hamu Software & Design. All rights reserved.</h6>
         </div>
       </div>
     )

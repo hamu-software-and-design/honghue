@@ -1,8 +1,12 @@
 import React from 'react'
+import {Route} from 'react-router'
 import {ConnectedRouter} from 'react-router-redux'
 import * as RouterTypes from './flowtypes.js'
 import LocaleProvider from '../Locale/Index.js'
 import UIContainer from '../../Scenes/UIContainer.js'
+import Home from '../../Scenes/Home/Index.js'
+import Store from '../../Scenes/Store/Index.js'
+import Contact from '../../Scenes/Contact/Index.js'
 
 type PropTypes = {
   history: RouterTypes.HistoryType
@@ -25,7 +29,11 @@ export default class Router extends React.Component<void,PropTypes,void> {
     return (
       <ConnectedRouter history={history}>
         <LocaleProvider>
-          <UIContainer />
+          <UIContainer>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/store" component={Store} />
+            <Route exact path="/contact" component={Contact} />
+          </UIContainer>
         </LocaleProvider>
       </ConnectedRouter>
     )

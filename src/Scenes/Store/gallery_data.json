@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Body Bath Natural",
+    "price": 550000,
+    "img": "/img/store/1.jpg"
+  },
+  {
+    "name": "Whitening Body Cream",
+    "price": 470000,
+    "img": "/img/store/2.jpg"
+  },
+  {
+    "name": "Whitening Facial Cream (Night)",
+    "price": 670000,
+    "img": "/img/store/3.jpg"
+  },
+  {
+    "name": "Whitening Facial Cream (Day)",
+    "price": 670000,
+    "img": "/img/store/4.jpg"
+  },
+  {
+    "name": "Serum Collagen",
+    "price": 600000,
+    "img": "/img/store/5.jpg"
+  },
+  {
+    "name": "Serum Acmes",
+    "price": 650000,
+    "img": "/img/store/6.jpg"
+  }
+]

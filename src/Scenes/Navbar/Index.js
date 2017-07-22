@@ -6,6 +6,7 @@
  */
 import React from 'react'
 import {FormattedMessage} from 'react-intl'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Navbar, NavbarBrand, Nav, NavbarToggler, NavItem, NavLink, Collapse, Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap'
 import LocaleButton from './LocaleButton.js'
@@ -54,11 +55,11 @@ class MainNav extends React.Component<void,PropTypes,State> {
     return (
       <Navbar id="mainnav" light toggleable>
         <NavbarToggler right onClick={() => this.toggleCollapse()} />
-        <NavbarBrand className="cursive font-size-lg" href="/">HONG HUE</NavbarBrand>
+        <NavbarBrand tag={Link} className="font-quicksand font-size-lg" to="/">HONG HUE</NavbarBrand>
         <Collapse id="mainnav-right" isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto line-height-lg" navbar>
-            <NavItem><NavLink href="/"><i className="material-icons align-middle">shopping_basket</i> <FormattedMessage id="mainnav.store" /></NavLink></NavItem>
-            <NavItem><NavLink href="/"><i className="material-icons align-middle">phone</i> <FormattedMessage id="mainnav.contact" /></NavLink></NavItem>
+            <NavItem><NavLink tag={Link} to="/store"><i className="material-icons align-middle">shopping_basket</i> <FormattedMessage id="mainnav.store" /></NavLink></NavItem>
+            <NavItem><NavLink tag={Link} to="/contact"><i className="material-icons align-middle">phone</i> <FormattedMessage id="mainnav.contact" /></NavLink></NavItem>
             <NavItem>
               <Dropdown isOpen={localeDropDownIsOpen} toggle={() => this.toggleLocaleDropDown()}>
                 <DropdownToggle nav>

@@ -5,27 +5,31 @@
  * @flow
  */
 import React from 'react'
-import ModalItem from './ModalItem.js'
+import GalleryItem from './GalleryItem.js'
+
+type PropTypes = {
+  children?: React.Children,
+  className: string
+}
+type DefaultPropTypes = {
+  className: string
+}
 
 /**
  * @class
  * @extends {React.Component}
  * Gallery component
  */
-export default class Gallery extends React.Component {
+export default class Gallery extends React.Component<DefaultPropTypes, PropTypes, void> {
+  static defaultProps = {
+    className: ''
+  }
   /**
-   * Renders each item in the gallery.
-   * @method
-   * @returns {ReactElement}
+   * Item component for Gallery.
+   * @memberof Gallery
    */
-  renderItem(image: string) {
-    return (
-      <div key={'gallery-'+image} className="hvr-darken m-v-15px col-4 col-md-6 col-lg-4">
-        <ModalItem style={{ backgroundImage: 'url("'+image+'")'}} className="square-responsive img-thumbnail bg-cover-default">
-          <img className="modal-img" src={image} />
-        </ModalItem>
-      </div>
-    )
+  static get Item() {
+    return GalleryItem
   }
   /**
    * Renders the react element
@@ -34,15 +38,13 @@ export default class Gallery extends React.Component {
    * @returns {ReactElement}
    */
   render() {
-    const items = ['/img/gallery/1.jpg', '/img/gallery/2.jpg', '/img/gallery/3.jpg', '/img/gallery/4.jpg', '/img/gallery/5.jpg', '/img/gallery/6.jpg']
+    const {children, className} = this.props
     return (
-      <div className="gallery">
-        <div className="row">
-          {
-            items.map((url) => {
-              return this.renderItem(url)
-            })
-          }
+      <div className={"gallery " + className}>
+        <div className="container-fluid">
+          <div className="row">
+            { children }
+          </div>
         </div>
       </div>
     )

@@ -2,7 +2,7 @@
 import React from 'react'
 import StoreProvider from './Store/Index.js'
 import Router from './Router/Index.js'
-import {createBrowserHistory} from 'history'
+import {createHashHistory} from 'history'
 
 /**
  * @class
@@ -17,7 +17,7 @@ export default class App extends React.Component {
    * @returns {ReactElement}
    */
   render() {
-    const history = createBrowserHistory()
+    const history = createHashHistory()
     return (
       <StoreProvider history={history}>
         <Router history={history} />
