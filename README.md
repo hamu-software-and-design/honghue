@@ -1,2 +1,2 @@
 # honghue
-Website
+Source code for the website Hong Hue.
