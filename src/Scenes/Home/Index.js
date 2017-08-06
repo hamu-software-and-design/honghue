@@ -24,14 +24,14 @@ export default class HomePage extends React.Component {
    * @return {ReactElement}
    */
   render() {
-    const galleryitems = ['/img/gallery/1.jpg', '/img/gallery/2.jpg', '/img/gallery/3.jpg', '/img/gallery/4.jpg', '/img/gallery/5.jpg', '/img/gallery/6.jpg']
+    const galleryitems = ['./img/gallery/1.jpg', './img/gallery/2.jpg', './img/gallery/3.jpg', './img/gallery/4.jpg', './img/gallery/5.jpg', './img/gallery/6.jpg']
     return (
       <div>
         <div className="container">
           <div id="mainbanner-container" >
             <div className="relative h-min-500 h-100">
               <object id="logo" className="absolute-center z-10" type="image/svg+xml" data="./img/honghue-logo.svg"></object>
-              <div id="mainbanner" className="justify-content-center h-100">
+              <div id="mainbanner" style={{ backgroundImage: "url('./img/banner.jpg')"}} className="justify-content-center h-100">
               </div>
             </div>
           </div>

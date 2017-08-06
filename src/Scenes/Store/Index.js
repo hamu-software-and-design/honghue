@@ -24,19 +24,18 @@ export default class Store extends React.Component {
    * @returns {ReactElement}
    */
   render() {
-    const store_content = new Array(6).fill('').map((_,i) => '/img/store/'+(i+1)+'.jpg')
     return (
       <div>
         <Carousel id="promo-carousel" withControls withIndicators>
           <Carousel.Item active>
-            <div style={{backgroundImage: 'url("/img/promos/openning.jpg")'}} className="w-100 h-300px bg-cover-default d-flex align-items-center filter-greyscale">
+            <div style={{backgroundImage: 'url("./img/promos/openning.jpg")'}} className="w-100 h-300px bg-cover-default d-flex align-items-center filter-greyscale">
               <div className="container">
                 <h1 className="font-quicksand text-white">Openning 5/6/17</h1>
               </div>
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div style={{backgroundImage: 'url("/img/promos/cake.jpg")'}} className="w-100 h-300px bg-cover-default d-flex align-items-center">
+            <div style={{backgroundImage: 'url("./img/promos/cake.jpg")'}} className="w-100 h-300px bg-cover-default d-flex align-items-center">
               <div className="container">
                 <h1 className="font-quicksand text-white">Example promo.</h1>
               </div>

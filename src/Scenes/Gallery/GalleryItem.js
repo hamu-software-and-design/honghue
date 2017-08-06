@@ -5,7 +5,6 @@
  * @flow
  */
 import React from 'react'
-import ModalItem from './ModalItem.js'
 
 type PropTypes = {
   img: string,

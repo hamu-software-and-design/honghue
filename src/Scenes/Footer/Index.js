@@ -28,7 +28,7 @@ export default class Footer extends React.Component {
               <h5 className="font-quicksand">Hong Hue</h5>
               <h6>Cosmetics Store</h6>
               <div>
-                <Button color="secondary"><i className="fa fa-facebook"></i></Button>
+                <a className="btn btn-secondary" href="https://www.facebook.com/honghue.comestics/"><i className="fa fa-facebook"></i></a>
                 <Button color="secondary"><i className="fa fa-twitter"></i></Button>
               </div>
             </div>

@@ -3,7 +3,6 @@
   padding-bottom: 50px;
   min-height: 550px;
   #mainbanner {
-    background-image: url('/img/banner.jpg');
     background-size: cover;
     background-position: 50% 50%;
     filter: brightness(0.6);
@@ -16,12 +15,6 @@
 
 #banner-2-container {
   margin-top: 30px;
-}
-
-#banner-2 {
-  background-image: url('/img/models.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 #home-2 {

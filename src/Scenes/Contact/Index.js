@@ -16,14 +16,14 @@ export default class ContactPage extends React.Component {
   render() {
     return (
       <div>
-        <div style={{ backgroundImage: 'url("/img/store_front.jpg")'}} className="p-v-30px w-100 bg-cover-default">
+        <div style={{ backgroundImage: 'url("./img/store_front.jpg")'}} className="p-v-30px w-100 bg-cover-default">
           <div className="container">
             <div className="row">
               <div className="col-sm-12 col-md-8 d-flex align-items-center justify-content-center">
                 <div className="justify-content-center">
                   <object id="logo" className="z-10" type="image/svg+xml" data="./img/honghue-logo.svg"></object>
                   <div className="h-100 d-flex justify-content-center">
-                    <Button outline color="secondary m-right-30px w-min-100px"><i className="fa fa-facebook"></i></Button>
+                    <a className="btn btn-outline-secondary m-right-30px w-min-100px" href="https://www.facebook.com/honghue.comestics/"><i className="fa fa-facebook"></i></a>
                     <Button outline color="secondary w-min-100px"><i className="fa fa-twitter"></i></Button>
                   </div>
                 </div>
